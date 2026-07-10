@@ -1,0 +1,47 @@
+@model IEnumerable<AppWebACME.Models.UnidadMedidum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UnidadMedida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sigla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadMedida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sigla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdunidadMedida">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdunidadMedida">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdunidadMedida">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

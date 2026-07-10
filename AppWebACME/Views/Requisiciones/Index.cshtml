@@ -1,0 +1,59 @@
+@model IEnumerable<AppWebACME.Models.Requisicion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NroRequiscion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEmision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aprobada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdempresaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NroRequiscion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEmision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aprobada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdempresaNavigation.Idempresa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idrequisicion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idrequisicion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idrequisicion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
