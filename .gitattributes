@@ -61,3 +61,10 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+
+# Fuerza a que los archivos .sql sean detectados como T-SQL (SQL Server)
+*.sql linguist-language=TSQL
+
+# Mejora el manejo de diffs (diferencias) para archivos SQL
+*.sql diff=sql
